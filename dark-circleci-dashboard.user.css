@@ -1,0 +1,104 @@
+/* ==UserStyle==
+@name           CircleCi Dark Dashboard
+@namespace      github.com/aalvarado
+@version        1.0.0
+@description    Dark CircleCi Dashboard style
+@author         @aalvarado
+@license      BSD
+@preprocessor default
+@var color pipelines-bg "Pipelines Background Color" #222
+@var color default-fg "Default Foreground Color" #cccccc
+@var color default-bg "Default Background Color" #333
+@var color default-link "Default link Color" white
+@var color default-hl "Default Highlight Color" white
+@var color cards-bg "Cards Bg" #444
+@var color cards-fg "Cards Fg" #ccc
+@var color input-bg "Input background color" #444
+@var color input-bg-hover "Input background color hover" #666
+@var color input-fg "Input background color" #ccc
+==/UserStyle== */
+
+@-moz-document url-prefix("https://app.circleci.com/pipelines/") {  
+    /* general */
+    
+    button, 
+    input {
+        background-color: var(--input-bg) !important;
+        color: var(--default-fg) !important;
+    }
+    
+    button[class][aria-label*='Picker'] + div,
+    button[class][aria-label*='Picker'] + div > div:first-child{
+        background-color: var(--input-bg) !important;
+        color: var(--default-fg) !important;
+    }
+    
+    button[class][aria-label*='Picker'] + div:hover,
+    button[class][aria-label*='Picker'] + div > div:first-child:hover,
+    button[class][aria-label*='Picker'] + div a:hover{
+        background-color: var(--input-bg-hover) !important;
+    }
+
+    /* Pipelines main only has main element */
+    main div header  {
+       background-color: var(--default-bg) !important;
+       color: var(--default-fg);
+    }
+    
+    main div header li a,
+    main > div:first-child li a,
+    main > div:first-child li span {       
+        color: var(--default-fg) !important;
+    }
+    
+    main > div:last-child > div:first-child div {
+        color: var(--default-fg) !important;
+    }
+    
+    main > div:first-child > div,
+    [data-cy="workflow-graph"]{
+       background-color: var(--pipelines-bg) !important;
+        padding: 20px;
+        margin: 20px;
+        
+    }
+
+    main > div:first-child > div > div:nth-child(2) p {
+        color: var(--default-fg) !important
+    }
+
+    main > div:first-child > div > div:not(:first-child):not(:nth-child(2)) {
+        background-color: var(--cards-bg) !important;
+    }
+    
+    /* next app */
+    
+    #__next{
+        background-color: var(--input-bg) !important;
+        color: var(--default-fg);
+    }
+    
+    
+    #__next > div > div:last-child > div:first-child > div:first-child ol li,
+    #__next > div > div:last-child > div:first-child > div:first-child ol li div,
+    #__next > div > div:last-child > div:first-child > div:first-child ol li span,
+    #__next > div > div:last-child > div:first-child > div:first-child ol li a{
+        color: var(--default-fg);
+    }
+    
+    #__next > div > div:last-child > div:first-child > div:last-child div {
+       background-color: var(--default-bg) !important;
+       color: var(--default-fg);
+    }
+    
+    #__next > div > main > div:last-child > div:last-child {
+        margin: 0;
+        background-color: var(--pipelines-bg) 
+    }
+    
+    
+    #__next > div > main > div:last-child > div:first-child > div{
+       background-color: var(--default-bg) !important;
+       color: var(--default-fg);
+    }
+}
