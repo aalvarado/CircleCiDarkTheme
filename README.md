@@ -14,7 +14,7 @@ I believe that we should be able to change any background we want from any websi
 I consider night mode a fundamental feature that should be provided because it reduces eyestrain and user fatigue. 
 
 # Preview
-Soon!
+![](dark-circle-ci.png)
 
 # Check my other style
 * Jira Dark Theme - https://github.com/aalvarado/JiraDarkTheme
