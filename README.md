@@ -1,4 +1,4 @@
-# Dark CircleCi Dashboard Pipelines Dark Theme
+# Dark CircleCi Dashboard/Pipelines Dark Theme
 Dark CircleCi Dashboard Theme Userstyle
 
 (Other people might call this: Dark mode, Night mode, Night theme, Eye care).
