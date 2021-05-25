@@ -16,8 +16,8 @@ I consider night mode a fundamental feature that should be provided because it r
 # Preview
 ![](dark-circle-ci.png)
 
-- Settings
-- - ![](dark-circle-ci-settings.png)
+## Settings
+![](dark-circle-ci-settings.png)
 
 # Check my other style
 * Jira Dark Theme - https://github.com/aalvarado/JiraDarkTheme
