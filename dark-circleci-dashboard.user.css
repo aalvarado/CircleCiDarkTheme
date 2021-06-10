@@ -1,15 +1,15 @@
 /* ==UserStyle==
 @name           CircleCi Dark Dashboard
 @namespace      github.com/aalvarado
-@version        1.0.0
+@version        1.1.0
 @description    Dark CircleCi Dashboard style
+@license        BSD
 @author         @aalvarado
-@license      BSD
-@preprocessor default
 @var color pipelines-bg "Pipelines Background Color" #222
 @var color default-fg "Default Foreground Color" #cccccc
 @var color default-bg "Default Background Color" #333
-@var color default-link "Default link Color" white
+@var color default-bg-hover "Default Background Hover Color" #444
+@var color default-link "Default link Color" #afa
 @var color default-hl "Default Highlight Color" white
 @var color cards-bg "Cards Bg" #444
 @var color cards-fg "Cards Fg" #ccc
@@ -21,11 +21,30 @@
 @-moz-document url-prefix("https://app.circleci.com/pipelines/") {  
     /* general */
     
-    button, 
-    input {
+    button,
+    [role='button'],
+    input, ul,
+    [data-testid="side-panel-position"] div {
         background-color: var(--input-bg) !important;
         color: var(--default-fg) !important;
     }
+    
+    
+    
+    [data-testid="side-panel-position"] > div:first-child > div:first-child > div:nth-child(2) > div:first-child {
+        background-color: white !important;
+    }
+    
+    button:hover {
+        background-color: var(--input-bg-hover) !important;
+    }
+    
+      
+    svg path{
+        color: var(--default-hl) !important;
+        fill: var(--default-hl);
+    }
+    
     
     button[class][aria-label*='Picker'] + div,
     button[class][aria-label*='Picker'] + div > div:first-child{
@@ -46,6 +65,7 @@
     }
     
     main div header li a,
+    
     main > div:first-child li a,
     main > div:first-child li span {       
         color: var(--default-fg) !important;
@@ -70,11 +90,45 @@
     main > div:first-child > div > div:not(:first-child):not(:nth-child(2)) {
         background-color: var(--cards-bg) !important;
     }
+  
     
+    main > div:first-child > div > div:not(:first-child):not(:nth-child(2)) div span,
+    main > div:first-child > div > div:not(:first-child):not(:nth-child(2)) div span div,
+    main > div:first-child > div > div:not(:first-child):not(:nth-child(2)) div > div div{
+        color: var(--default-fg);
+    }
+    
+    main > div:first-child > div > div:not(:first-child):not(:nth-child(2)) > div:nth-child(9) {
+        background-color: var(--default-bg);
+        padding: 1em;
+         
+    }
+    
+    main > div:first-child > div > div:not(:first-child):not(:nth-child(2)) > div:nth-child(9) > div > ul > div:first-child{
+        background-color: var(--default-bg);
+    }
+    
+    main > div:first-child > div > div:not(:first-child):not(:nth-child(2)) > div:nth-child(9) > div > ul > div:first-child:hover div {
+        background-color: transparent;
+    }
+    
+    main > div:first-child > div > div:not(:first-child):not(:nth-child(2)) > div:nth-child(9) > div > ul > div:first-child:hover {
+        background-color: var(--default-bg-hover);
+    }
+    
+    main > div:first-child > div > div:not(:first-child):not(:nth-child(2)) a,
+    [data-testid="side-panel-position"] a
+    {
+        color: var(--default-link);
+    }
+    
+    main > div:first-child > div > div:not(:first-child):not(:nth-child(2)) a span{
+        color: var(--default-hl);
+    }
     /* next app */
     
     #__next{
-        background-color: var(--input-bg) !important;
+        background-color: var(--default-bg) !important;
         color: var(--default-fg);
     }
     
