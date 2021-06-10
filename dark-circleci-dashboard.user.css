@@ -3,6 +3,7 @@
 @namespace      github.com/aalvarado
 @version        1.1.0
 @description    Dark CircleCi Dashboard style
+@license        BSD
 @author         @aalvarado
 @var color pipelines-bg "Pipelines Background Color" #222
 @var color default-fg "Default Foreground Color" #cccccc
